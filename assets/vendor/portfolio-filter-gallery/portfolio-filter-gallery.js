@@ -1,29 +1,29 @@
-$( window ).on( "load", function() {
-       var $container = $('.portfolioContainer');
+$(window).on("load", function () {
+    var $container = $('.portfolioContainer');
+    // $container.isotope({
+    //     filter: '*', animationOptions: {
+    //         duration: 750, easing: 'linear', queue: false
+    //     }
+    // });
     $container.isotope({
-        filter: '*',
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
+        filter: $('.portfolioFilter .current').attr('data-filter'), animationOptions: {
+            duration: 750, easing: 'linear', queue: false
         }
     });
- 
-    $('.portfolioFilter a').click(function(){
+
+
+    $('.portfolioFilter a').click(function () {
         $('.portfolioFilter .current').removeClass('current');
         $(this).addClass('current');
- 
+
         var selector = $(this).attr('data-filter');
         $container.isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
+            filter: selector, animationOptions: {
+                duration: 750, easing: 'linear', queue: false
             }
-         });
-         return false;
-    }); 
+        });
+        return false;
+    });
 });
         
     
